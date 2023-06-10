@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasksfrontend.model;
+package br.ce.rodrigoganchieta.tasksfrontend.model;
 
 import java.time.LocalDate;
 

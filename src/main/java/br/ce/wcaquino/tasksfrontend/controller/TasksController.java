@@ -1,4 +1,4 @@
-package br.ce.wcaquino.tasksfrontend.controller;
+package br.ce.rodrigoganchieta.tasksfrontend.controller;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 
-import br.ce.wcaquino.tasksfrontend.model.Todo;
+import br.ce.rodrigoganchieta.tasksfrontend.model.Todo;
 
 @Controller
 public class TasksController {
@@ -49,7 +49,7 @@ public class TasksController {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			restTemplate.postForObject(
-					getBackendURL() + "/tasks-backend/todo", todo, Object.class);			
+					getBackendURL() + "/jenkins-backend-wca/todo", todo, Object.class);			
 			model.addAttribute("success", "Success!");
 			return "index";
 		} catch(Exception e) {
@@ -67,7 +67,7 @@ public class TasksController {
 	@GetMapping("delete/{id}")
 	public String delete(@PathVariable Long id, Model model) {
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.delete(getBackendURL() + "/tasks-backend/todo/" + id);			
+		restTemplate.delete(getBackendURL() + "/jenkins-backend-wca/todo/" + id);			
 		model.addAttribute("success", "Success!");
 		model.addAttribute("todos", getTodos());
 		return "index";
@@ -78,6 +78,6 @@ public class TasksController {
 	private List<Todo> getTodos() {
 		RestTemplate restTemplate = new RestTemplate();
 		return restTemplate.getForObject(
-				getBackendURL() + "/tasks-backend/todo", List.class);
+				getBackendURL() + "/jenkins-backend-wca/todo", List.class);
 	}
 }
