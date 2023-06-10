@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.ce.rodrigoganchieta</groupId>
-	<artifactId>tasks-frontend</artifactId>
+	<artifactId>jenkins-frontend-wca</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>tasks-frontend</name>
+	<name>jenkins-frontend-wca</name>
 	<description>A very simple task management tool</description>
 
 	<properties>
